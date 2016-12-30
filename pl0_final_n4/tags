@@ -1,0 +1,227 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+CAL	.\PL0.h	/^	LIT, OPR, LOD, STO, CAL, INT, JMP, JPC, STA, LAD$/;"	e	enum:opcode
+CXMAX	.\PL0.h	11;"	d
+ID_ARRAY	.\PL0.h	/^	ID_CONSTANT, ID_VARIABLE, ID_PROCEDURE, ID_ARRAY$/;"	e	enum:idtype
+ID_CONSTANT	.\PL0.h	/^	ID_CONSTANT, ID_VARIABLE, ID_PROCEDURE, ID_ARRAY$/;"	e	enum:idtype
+ID_PROCEDURE	.\PL0.h	/^	ID_CONSTANT, ID_VARIABLE, ID_PROCEDURE, ID_ARRAY$/;"	e	enum:idtype
+ID_VARIABLE	.\PL0.h	/^	ID_CONSTANT, ID_VARIABLE, ID_PROCEDURE, ID_ARRAY$/;"	e	enum:idtype
+INT	.\PL0.h	/^	LIT, OPR, LOD, STO, CAL, INT, JMP, JPC, STA, LAD$/;"	e	enum:opcode
+JMP	.\PL0.h	/^	LIT, OPR, LOD, STO, CAL, INT, JMP, JPC, STA, LAD$/;"	e	enum:opcode
+JPC	.\PL0.h	/^	LIT, OPR, LOD, STO, CAL, INT, JMP, JPC, STA, LAD$/;"	e	enum:opcode
+LAD	.\PL0.h	/^	LIT, OPR, LOD, STO, CAL, INT, JMP, JPC, STA, LAD$/;"	e	enum:opcode
+LIT	.\PL0.h	/^	LIT, OPR, LOD, STO, CAL, INT, JMP, JPC, STA, LAD$/;"	e	enum:opcode
+LOD	.\PL0.h	/^	LIT, OPR, LOD, STO, CAL, INT, JMP, JPC, STA, LAD$/;"	e	enum:opcode
+MAXADDRESS	.\PL0.h	9;"	d
+MAXDIMLEN	.\PL0.h	3;"	d
+MAXIDLEN	.\PL0.h	8;"	d
+MAXINS	.\PL0.h	12;"	d
+MAXLEVEL	.\PL0.h	10;"	d
+MAXNUMLEN	.\PL0.h	6;"	d
+MAXSYM	.\PL0.h	14;"	d
+NRW	.\PL0.h	4;"	d
+NSYM	.\PL0.h	7;"	d
+OPR	.\PL0.h	/^	LIT, OPR, LOD, STO, CAL, INT, JMP, JPC, STA, LAD$/;"	e	enum:opcode
+OPR_ADD	.\PL0.h	/^	OPR_ADD,$/;"	e	enum:oprcode
+OPR_AND	.\PL0.h	/^	OPR_AND,$/;"	e	enum:oprcode
+OPR_DIV	.\PL0.h	/^	OPR_DIV,$/;"	e	enum:oprcode
+OPR_EQU	.\PL0.h	/^	OPR_EQU,$/;"	e	enum:oprcode
+OPR_GEQ	.\PL0.h	/^	OPR_GEQ,$/;"	e	enum:oprcode
+OPR_GTR	.\PL0.h	/^	OPR_GTR,$/;"	e	enum:oprcode
+OPR_LEQ	.\PL0.h	/^	OPR_LEQ,$/;"	e	enum:oprcode
+OPR_LES	.\PL0.h	/^	OPR_LES,$/;"	e	enum:oprcode
+OPR_MIN	.\PL0.h	/^	OPR_MIN,$/;"	e	enum:oprcode
+OPR_MUL	.\PL0.h	/^	OPR_MUL,$/;"	e	enum:oprcode
+OPR_NEG	.\PL0.h	/^	OPR_NEG,$/;"	e	enum:oprcode
+OPR_NEQ	.\PL0.h	/^	OPR_NEQ,$/;"	e	enum:oprcode
+OPR_NOT	.\PL0.h	/^	OPR_NOT$/;"	e	enum:oprcode
+OPR_ODD	.\PL0.h	/^	OPR_ODD,$/;"	e	enum:oprcode
+OPR_OR	.\PL0.h	/^	OPR_OR,$/;"	e	enum:oprcode
+OPR_PRT	.\PL0.h	/^	OPR_PRT,$/;"	e	enum:oprcode
+OPR_RED	.\PL0.h	/^	OPR_RED,$/;"	e	enum:oprcode
+OPR_RET	.\PL0.h	/^	OPR_RET,$/;"	e	enum:oprcode
+OPR_WTL	.\PL0.h	/^	OPR_WTL,$/;"	e	enum:oprcode
+SET_H	.\set.h	2;"	d
+STA	.\PL0.h	/^	LIT, OPR, LOD, STO, CAL, INT, JMP, JPC, STA, LAD$/;"	e	enum:opcode
+STACKSIZE	.\PL0.h	15;"	d
+STEP	.\PL0.h	2;"	d
+STO	.\PL0.h	/^	LIT, OPR, LOD, STO, CAL, INT, JMP, JPC, STA, LAD$/;"	e	enum:opcode
+SYM_AND	.\PL0.h	/^	SYM_AND,$/;"	e	enum:symtype
+SYM_BECOMES	.\PL0.h	/^	SYM_BECOMES,$/;"	e	enum:symtype
+SYM_BEGIN	.\PL0.h	/^	SYM_BEGIN,$/;"	e	enum:symtype
+SYM_BREAK	.\PL0.h	/^	SYM_BREAK$/;"	e	enum:symtype
+SYM_CALL	.\PL0.h	/^	SYM_CALL,$/;"	e	enum:symtype
+SYM_COMMA	.\PL0.h	/^	SYM_COMMA,$/;"	e	enum:symtype
+SYM_CONST	.\PL0.h	/^	SYM_CONST,$/;"	e	enum:symtype
+SYM_DO	.\PL0.h	/^	SYM_DO,$/;"	e	enum:symtype
+SYM_DOWNTO	.\PL0.h	/^	SYM_DOWNTO,$/;"	e	enum:symtype
+SYM_ELSE	.\PL0.h	/^	SYM_ELSE,$/;"	e	enum:symtype
+SYM_END	.\PL0.h	/^	SYM_END,$/;"	e	enum:symtype
+SYM_EQU	.\PL0.h	/^	SYM_EQU,$/;"	e	enum:symtype
+SYM_EXIT	.\PL0.h	/^	SYM_EXIT,$/;"	e	enum:symtype
+SYM_FOR	.\PL0.h	/^	SYM_FOR,$/;"	e	enum:symtype
+SYM_GEQ	.\PL0.h	/^	SYM_GEQ,$/;"	e	enum:symtype
+SYM_GTR	.\PL0.h	/^	SYM_GTR,$/;"	e	enum:symtype
+SYM_IDENTIFIER	.\PL0.h	/^	SYM_IDENTIFIER,$/;"	e	enum:symtype
+SYM_IF	.\PL0.h	/^	SYM_IF,$/;"	e	enum:symtype
+SYM_LEQ	.\PL0.h	/^	SYM_LEQ,$/;"	e	enum:symtype
+SYM_LES	.\PL0.h	/^	SYM_LES,$/;"	e	enum:symtype
+SYM_LPAREN	.\PL0.h	/^	SYM_LPAREN,$/;"	e	enum:symtype
+SYM_LSQUARE	.\PL0.h	/^	SYM_LSQUARE,$/;"	e	enum:symtype
+SYM_MINUS	.\PL0.h	/^	SYM_MINUS,$/;"	e	enum:symtype
+SYM_NEQ	.\PL0.h	/^	SYM_NEQ,$/;"	e	enum:symtype
+SYM_NOT	.\PL0.h	/^	SYM_NOT,$/;"	e	enum:symtype
+SYM_NULL	.\PL0.h	/^	SYM_NULL,$/;"	e	enum:symtype
+SYM_NUMBER	.\PL0.h	/^	SYM_NUMBER,$/;"	e	enum:symtype
+SYM_ODD	.\PL0.h	/^	SYM_ODD,$/;"	e	enum:symtype
+SYM_OR	.\PL0.h	/^	SYM_OR,$/;"	e	enum:symtype
+SYM_PERIOD	.\PL0.h	/^	SYM_PERIOD,$/;"	e	enum:symtype
+SYM_PLUS	.\PL0.h	/^	SYM_PLUS,$/;"	e	enum:symtype
+SYM_PROCEDURE	.\PL0.h	/^	SYM_PROCEDURE,$/;"	e	enum:symtype
+SYM_READ	.\PL0.h	/^	SYM_READ,$/;"	e	enum:symtype
+SYM_REPEAT	.\PL0.h	/^	SYM_REPEAT,$/;"	e	enum:symtype
+SYM_RPAREN	.\PL0.h	/^	SYM_RPAREN,$/;"	e	enum:symtype
+SYM_RSQUARE	.\PL0.h	/^	SYM_RSQUARE,$/;"	e	enum:symtype
+SYM_SEMICOLON	.\PL0.h	/^	SYM_SEMICOLON,$/;"	e	enum:symtype
+SYM_SLASH	.\PL0.h	/^	SYM_SLASH,$/;"	e	enum:symtype
+SYM_THEN	.\PL0.h	/^	SYM_THEN,$/;"	e	enum:symtype
+SYM_TIMES	.\PL0.h	/^	SYM_TIMES,$/;"	e	enum:symtype
+SYM_TO	.\PL0.h	/^	SYM_TO,$/;"	e	enum:symtype
+SYM_UNTIL	.\PL0.h	/^	SYM_UNTIL,$/;"	e	enum:symtype
+SYM_VAR	.\PL0.h	/^	SYM_VAR,$/;"	e	enum:symtype
+SYM_WHILE	.\PL0.h	/^	SYM_WHILE,$/;"	e	enum:symtype
+SYM_WRITE	.\PL0.h	/^	SYM_WRITE,$/;"	e	enum:symtype
+SYM_WRITELN	.\PL0.h	/^	SYM_WRITELN,$/;"	e	enum:symtype
+TXMAX	.\PL0.h	5;"	d
+a	.\PL0.h	/^	int a; \/\/ displacement address$/;"	m	struct:__anon1
+address	.\PL0.h	/^	short address;$/;"	m	struct:__anon4
+address	.\PL0.h	/^	short address;$/;"	m	struct:__anon5
+array	.\PL0.h	/^} array;$/;"	t	typeref:struct:__anon5
+array_size	.\PL0.h	/^int array_size = 1;$/;"	v
+arsize	.\pl0_5.c	/^int arsize(int i) {$/;"	f
+base	.\pl0_5.c	/^int base(int stack[], int currentLevel, int levelDiff) {$/;"	f
+block	.\pl0_5.c	/^void block(symset fsys) {$/;"	f
+cc	.\PL0.h	/^int cc; \/\/ character count$/;"	v
+ch	.\PL0.h	/^char ch; \/\/ last character read$/;"	v
+code	.\PL0.h	/^instruction code[CXMAX];$/;"	v
+comtab	.\PL0.h	/^} comtab;$/;"	t	typeref:struct:__anon3
+con_factor	.\pl0_5.c	/^void con_factor(symset fsys) {$/;"	f
+con_term	.\pl0_5.c	/^void con_term(symset fsys) {$/;"	f
+condition	.\pl0_5.c	/^void condition(symset fsys) {$/;"	f
+constdeclaration	.\pl0_5.c	/^void constdeclaration(symset fsys) {$/;"	f
+constexpre	.\pl0_5.c	/^int constexpre(symset fsys) {$/;"	f
+constfactor	.\pl0_5.c	/^int constfactor(symset fsys) {$/;"	f
+constterm	.\pl0_5.c	/^int constterm(symset fsys) {$/;"	f
+createset	.\set.c	/^symset createset(int elem, ...\/* SYM_NULL *\/)$/;"	f
+csym	.\PL0.h	/^char csym[NSYM + 1] = { ' ', '+', '-', '*', '\/', '(', ')', '=', ',', '.', ';',$/;"	v
+cutcode	.\pl0_5.c	/^void cutcode(int start, int end) { \/\/cy_quote$/;"	f
+cutprovarcode	.\pl0_5.c	/^void cutprovarcode(int star_cx, int end_cx, int star_tx, int end_tx) {$/;"	f
+cx	.\PL0.h	/^int cx; \/\/ index of current instruction to be generated.$/;"	v
+cxb	.\PL0.h	/^} cxb; \/\/存放break代码地址$/;"	t	typeref:struct:__anon2
+cxbreak	.\PL0.h	/^cxb cxbreak;$/;"	v
+cxbrk	.\PL0.h	/^	int cxbrk;$/;"	m	struct:cxlink
+cxbrklink	.\PL0.h	/^}*cxbrklink;$/;"	t	typeref:struct:cxlink
+cxlink	.\PL0.h	/^typedef struct cxlink {$/;"	s
+declbegsys	.\set.h	/^symset phi, declbegsys, statbegsys, facbegsys, relset;$/;"	v
+destroyset	.\set.c	/^void destroyset(symset s)$/;"	f
+dim	.\PL0.h	/^int dim = 0;$/;"	v
+dim	.\PL0.h	/^typedef struct dim {$/;"	s
+dim_len	.\PL0.h	/^	int dim_len;$/;"	m	struct:dim
+dim_n	.\PL0.h	/^	short dim_n;$/;"	m	struct:__anon5
+dimdeclaration	.\pl0_5.c	/^void dimdeclaration(void) {$/;"	f
+dx	.\pl0_5.c	/^int dx[MAXLEVEL]; \/\/ data allocation index$/;"	v
+elem	.\set.h	/^	int elem;$/;"	m	struct:snode
+end	.\PL0.h	/^	int end;$/;"	m	struct:prolink
+enter	.\pl0_5.c	/^void enter(int kind) \/\/����txָ�룬������������ȫ����ã����ǹ�̵ı�ʶ�����addressδ�����ȫ���$/;"	f
+enterPar	.\pl0_5.c	/^void enterPar() {$/;"	f
+err	.\PL0.h	/^int err;$/;"	v
+err_msg	.\PL0.h	/^char* err_msg[] =$/;"	v
+error	.\pl0_5.c	/^void error(int n) {$/;"	f
+expression	.\pl0_5.c	/^void expression(symset fsys) {$/;"	f
+f	.\PL0.h	/^	int f; \/\/ function code$/;"	m	struct:__anon1
+facbegsys	.\set.h	/^symset phi, declbegsys, statbegsys, facbegsys, relset;$/;"	v
+factor	.\pl0_5.c	/^void factor(symset fsys) {$/;"	f
+flag	.\PL0.h	/^	int flag;$/;"	m	struct:__anon2
+gen	.\pl0_5.c	/^void gen(int x, int y, int z) {$/;"	f
+getch	.\pl0_5.c	/^void getch(void) {$/;"	f
+getsym	.\pl0_5.c	/^void getsym(void) {$/;"	f
+id	.\PL0.h	/^char id[MAXIDLEN + 1]; \/\/ last identifier read$/;"	v
+idtype	.\PL0.h	/^enum idtype {$/;"	g
+infile	.\PL0.h	/^FILE* infile;$/;"	v
+inset	.\set.c	/^int inset(int elem, symset s)$/;"	f
+instruction	.\PL0.h	/^} instruction;$/;"	t	typeref:struct:__anon1
+interpret	.\pl0_5.c	/^void interpret() {$/;"	f
+kind	.\PL0.h	/^	int kind;$/;"	m	struct:__anon3
+kind	.\PL0.h	/^	int kind;$/;"	m	struct:__anon4
+kind	.\PL0.h	/^	short kind;$/;"	m	struct:__anon5
+kk	.\PL0.h	/^int kk;$/;"	v
+l	.\PL0.h	/^	int l; \/\/ level$/;"	m	struct:__anon1
+latit	.\PL0.h	/^int latit[MAXDIMLEN];$/;"	v
+level	.\PL0.h	/^	short level;$/;"	m	struct:__anon4
+level	.\PL0.h	/^	short level;$/;"	m	struct:__anon5
+level	.\PL0.h	/^int level = 0;$/;"	v
+line	.\PL0.h	/^char line[80];$/;"	v
+listcode	.\pl0_5.c	/^void listcode(int from, int to) {$/;"	f
+ll	.\PL0.h	/^int ll; \/\/ line length$/;"	v
+locate	.\pl0_5.c	/^int locate(int n, int star_tx, int end_tx, int f) {$/;"	f
+main	.\pl0_5.c	/^void main() {$/;"	f
+mask	.\PL0.h	/^} mask;$/;"	t	typeref:struct:__anon4
+mnemonic	.\PL0.h	/^char* mnemonic[MAXINS] = { "LIT", "OPR", "LOD", "STO", "CAL", "INT", "JMP",$/;"	v
+modifyTable	.\pl0_5.c	/^void modifyTable(int numOfPar) {$/;"	f
+name	.\PL0.h	/^	char name[MAXIDLEN + 1];$/;"	m	struct:__anon3
+name	.\PL0.h	/^	char name[MAXIDLEN + 1];$/;"	m	struct:__anon4
+name	.\PL0.h	/^	char name[MAXIDLEN + 1];$/;"	m	struct:__anon5
+next	.\PL0.h	/^	p_dim* next;$/;"	m	struct:__anon3
+next	.\PL0.h	/^	p_dim* next;$/;"	m	struct:__anon4
+next	.\PL0.h	/^	p_dim* next;$/;"	m	struct:__anon5
+next	.\PL0.h	/^	struct cxlink* next;$/;"	m	struct:cxlink	typeref:struct:cxlink::cxlink
+next	.\PL0.h	/^	struct dim* next;$/;"	m	struct:dim	typeref:struct:dim::dim
+next	.\PL0.h	/^	struct prolink *next;$/;"	m	struct:prolink	typeref:struct:prolink::prolink
+next	.\set.h	/^	struct snode* next;$/;"	m	struct:snode	typeref:struct:snode::snode
+num	.\PL0.h	/^int num; \/\/ last number read$/;"	v
+numOfPar	.\PL0.h	/^	int numOfPar;$/;"	m	struct:__anon3
+numOfPar	.\PL0.h	/^	int numOfPar;$/;"	m	struct:__anon4
+numOfPar	.\PL0.h	/^	int numOfPar;$/;"	m	struct:__anon5
+opcode	.\PL0.h	/^enum opcode {$/;"	g
+oprcode	.\PL0.h	/^enum oprcode {$/;"	g
+p_dim	.\PL0.h	/^} p_dim;$/;"	t	typeref:struct:dim
+phi	.\set.h	/^symset phi, declbegsys, statbegsys, facbegsys, relset;$/;"	v
+position	.\pl0_5.c	/^int position(char* id) {$/;"	f
+printTable	.\pl0_5.c	/^void printTable() {$/;"	f
+prolink	.\PL0.h	/^typedef struct prolink {$/;"	s
+prolink	.\PL0.h	/^} prolink;$/;"	t	typeref:struct:prolink
+proth	.\PL0.h	/^int proth[100]; \/\/cy_quote$/;"	v
+quote	.\PL0.h	/^	int quote; \/\/是否引用过;0未引用;1引用过$/;"	m	struct:__anon3
+quote	.\PL0.h	/^	int quote; \/\/是否引用过;0未引用;1引用过$/;"	m	struct:__anon4
+quote	.\PL0.h	/^	int quote; \/\/是否引用过;0未引用;1引用过$/;"	m	struct:__anon5
+relset	.\set.h	/^symset phi, declbegsys, statbegsys, facbegsys, relset;$/;"	v
+search_pro	.\pl0_5.c	/^int search_pro(int n) { \/\/cy_quote$/;"	f
+search_var	.\pl0_5.c	/^int search_var(int len, int from) { \/\/cy_quote$/;"	f
+setinsert	.\set.c	/^void setinsert(symset s, int elem)$/;"	f
+sign	.\PL0.h	/^	int sign;$/;"	m	struct:__anon2
+snode	.\set.h	/^typedef struct snode$/;"	s
+snode	.\set.h	/^} snode, *symset;$/;"	t	typeref:struct:snode
+ssym	.\PL0.h	/^int ssym[NSYM + 1] = { SYM_NULL, SYM_PLUS, SYM_MINUS, SYM_TIMES, SYM_SLASH,$/;"	v
+start	.\PL0.h	/^	int start;$/;"	m	struct:prolink
+statbegsys	.\set.h	/^symset phi, declbegsys, statbegsys, facbegsys, relset;$/;"	v
+statement	.\pl0_5.c	/^void statement(symset fsys) {$/;"	f
+sym	.\PL0.h	/^int sym; \/\/ last symbol read$/;"	v
+symset	.\set.h	/^} snode, *symset;$/;"	t	typeref:struct:snode
+symtype	.\PL0.h	/^enum symtype {$/;"	g
+table	.\PL0.h	/^comtab table[TXMAX];$/;"	v
+table_adr	.\PL0.h	/^	int table_adr;$/;"	m	struct:prolink
+term	.\pl0_5.c	/^void term(symset fsys) {$/;"	f
+test	.\pl0_5.c	/^void test(symset s1, symset s2, int n) {$/;"	f
+then	.\PL0.h	/^	cxbrklink then;$/;"	m	struct:__anon2
+tx	.\PL0.h	/^int tx = 0;$/;"	v
+tx_	.\PL0.h	/^int tx_[100]; \/\/每递归调用一次block开始时table的tx位置$/;"	v
+uniteset	.\set.c	/^symset uniteset(symset s1, symset s2)$/;"	f
+value	.\PL0.h	/^	int value;$/;"	m	struct:__anon3
+vardeclaration	.\pl0_5.c	/^void vardeclaration(void) {$/;"	f
+word	.\PL0.h	/^char* word[NRW + 1] = { "", \/* place holder *\/$/;"	v
+wsym	.\PL0.h	/^int wsym[NRW + 1] = { SYM_NULL, SYM_BEGIN, SYM_CALL, SYM_CONST, SYM_DO, SYM_END,$/;"	v
+zx	.\pl0_5.c	/^int zx[MAXLEVEL];$/;"	v

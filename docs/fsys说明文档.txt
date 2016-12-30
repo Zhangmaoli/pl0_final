@@ -1,0 +1,28 @@
+declbegsys = createset(SYM_CONST, SYM_VAR, SYM_PROCEDURE, SYM_NULL);
+statbegsys = createset(SYM_BEGIN, SYM_CALL, SYM_IF, SYM_WHILE, SYM_NULL);
+facbegsys = createset(SYM_IDENTIFIER, SYM_NUMBER, SYM_LPAREN, SYM_NULL);
+
+main.block.fsys: PERIOD+declbeg+statbeg
+procedure.block.fsys=SEMICOLON+PERIOD+declbeg+statbeg
+statement.fsys=SEMICOLON+END+PERIOD?+declbeg+statbeg
+
+expression.fsys=RPAREN+
+
+============================follow==================================
+
+declbegsys	=	const	var	procedure
+statbegsys		=	begin	call	if	while		(?identifier?)
+facbegsys		=	identifier	number	(
+
+main.block.fsys	=	.	declbegsys	statbeg
+block.block.fsys	=	;	block.fsys
+block.statement.fsys	=	;	end	block.fsys
+statement.expression.fsys	=	;	statement.fsys
+statement.condition.fsys	=	then	do	statement.fsys  (?statement.fsys is not needed, how about deleteing it?)
+statement.statement.fsys	=	;	end	statement.fsys
+statement(write).expressioin.fsys	=	,	)	
+
+write(i+1,i+2)
+
+
+

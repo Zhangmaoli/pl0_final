@@ -1,0 +1,19 @@
+var i,j,k;
+procedure p;
+begin
+  j := 2;
+end;
+begin
+  /*for i := 6 downto 1+1 do   
+  begin
+      call p;
+      k := i - 2;
+      writeln(i,j,k);
+  end;*/
+  for i := 6  downto 1+1 do   
+  begin
+      call p;
+      k := i - 2;
+      writeln(i,j,k);
+  end;  
+end. 

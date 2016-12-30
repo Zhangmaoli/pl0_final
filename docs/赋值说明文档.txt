@@ -1,0 +1,4 @@
+ 1 在.h文件中增加SYM_ADDDEQU,SYM_SUBEQU,SYM_ADDADD,SYM_SUBSUB,SYM_MULEQU,SYM_DIVEQU,SYM_MODEQU.
+ 2 增加取模指令：OPR_MOD，在ssym数组和csym数组中增加SYM_MODEQU和‘%’，增加相应增加NSYM 的值。
+ 3 在.c文件中getsym()中增加对一系列赋值号和后置++，--的识别。在statement里增加对前置++，--的识别。
+ 4在statement变量赋值时增加新的赋值操作和自增自减操作。

@@ -1,0 +1,24 @@
+var i;
+procedure move(a,b);
+begin
+  writeln(i,a,b);
+  //print();
+  i := i + 1;
+end;
+
+procedure hanoi(n,a,b,c);
+begin
+        if n = 1 then
+          call move(a,c)
+        else 
+        begin
+          call hanoi(n-1,a,c,b);
+          call move(a,c);
+          call hanoi(n-1,b,a,c);
+        end;
+end;
+
+begin
+   i := 1;
+   call hanoi(5,1,2,3);
+end.

@@ -1,0 +1,242 @@
+==================================（2）	扩展PL/0中“条件”：（25分）===================================
+（i）	增加逻辑运算符and、or和not。
+（ii）	把PL/0语言中的“条件”概念一般化为C语言那样(表达式值非零即为“真”)。
+（iii）	“条件”的短路计算。
+
+修改的代码：
+	modify：condition（）
+	add:	con_term()	con_factor
+	
+
+
+if condition=trure then
+	truelist;
+else
+	falselist;
+
+
+
+短路计算：
+var：
+
+
+
+con_term:
+	con_factor;
+	jpc,0,0
+	add cx to falseCx[]
+	while sym=="and"
+		getsym();
+		con_factor
+		jpc,0,0
+		add cx to falseCx[]
+	lit,1
+	ret
+	code[falseCx[i]].a=cx
+	lit,0
+
+condition:
+	con_term
+	jnpc,0,0
+	add cx to trueCx[]
+	while sym=="or"
+		getsym()
+		con_term
+		jnpc,0,0
+		add cx to trueCx[]
+	lit,0
+	ret
+	code[trueCx[i]].a=cx
+	lit,1
+	
+		
+
+
+
+
+
+
+
+=====================================（4）	过程参数实现。采用传值方式，并实现简单的语义检查（如实参和形参个数/类型对应等）。（10分）===============================
+格式：
+过程定义:	procedure p(a,b)
+调用：		call p(i,j)
+
+支持：  	调用自己
+不支持：	调用在后面定义的
+		只声明不定义：
+
+
+-> procedure -> ident -> ( -> ident -> ) -> ; -> 程序体 ->;
+		      |    |<-  , <-|	 |
+		      |->->->->->->->->->|
+
+
+增加指令（opcode)： 无
+
+增加操作指令(oprcode):	无
+
+增加保留字（word[],wsym[]）：无
+
+增加符号类型（symtype）：无
+
+增加错误新信息（err_msg[34]）： The number of segments doesn't match.
+
+增加全局变量：	zx[level]：	每个层次的过程的参数个数
+
+增加的函数：	enterPar:	参数填入table
+		modifyTable：	修改填入table的参数的偏移地址
+
+
+
+修改的代码：	modify:	block.procedure	statement.call
+
+
+思路：
+
+
+如何传递参数？
+call p(i,j)
+把i和j的值压栈再cal p
+参数个数记录在表里,相对于p的偏移量分别是-2和-1
+
+主要修改的地方：
+	statement.call
+	block.procedure
+
+
+call p
+call p(i,j)
+
+
+
+
+===========增加功能：（5）else子句实现。（10分）=============
+语法：
+if <condition> then
+   statement(不能接分号）
+else
+   ...
+
+注：else前必须有if语句，但if语句之后不一定要加else。
+
+pl0.h：
+
+增加符号类型(symtype)：SYM_ELSE
+
+增加保留字(word[],wsym[]):“else”，“SYM_ELSE”，常数NRW++
+
+pl0.cpp
+
+修改statement部分，在SYM_IF分支添加代码。
+
+
+
+===========增加功能：（6）for语句的实现。语法可参照C语言（10分）=======
+语法：
+for var := E1 to/downto E2 do
+  ...
+
+注：to 递增，downto 递减，步长相等，由声明定义值的大小；
+    E1、E2是表达式。
+
+pl0.h:
+
+增加声明：#define STEP 2 //或者其他值，步长
+
+增加符号类型(symtype)：SYM_FOR,SYM_DOWNTO,SYM_TO
+
+增加错误信息(err_msg[])：/* 30 */    "'to' or 'downto' expected."；
+              /* 4 */    信息内容加上for后面要跟标识符。
+
+
+增加保留字(word[],wsym[])：“for”，“downto”，“to”
+                           SYM_FOR，SYM_DOWNTO，SYM_TO
+
+pl0.cpp：
+
+修改statement部分，添加else if(sym == SYM_FOR){ ... }
+
+
+==================== （7）	exit语句（退出当前执行过程）和break语句（跳出包含它的最内层循环）。（5分）=====================
+exit:
+语法： exit;
+头文件  增加：
+	symtype:	SYM_EXIT
+	word[]:		"exit"
+	wsym[]:		SYM_EXIT
+	修改：
+	NRW：		NRW++
+修改的代码：	add:	statement.exit
+
+思路：
+	执行RET。。。
+
+
+
+
+
+===========增加功能：	8	PL/0输入/输出语句。可参考C的相关函数，实现任意个数参数的输入或输出功能。（5分）======================
+语法：
+write(a): 输出a并且换行
+write(a,b)：输出a和b并换行，以空格分隔。
+。。。
+不支持write(a<b)
+
+增加指令（opcode)： 无
+
+增加操作指令(oprcode):	OPR_PRT(print)	输出栈顶的数字并去掉弹出栈顶的数
+			OPR_WTL(writeln)  新的一行
+
+增加保留字（word[],wsym[]）："write" 	相应常数NRW++
+
+增加符号类型（symtype）：SYM_WRITE
+
+增加错误新信息（err_msg[33]）： '(' expected
+
+流程图增加：
+	语句：	-> write -> ( -> 表达式	--> )
+			      |		 |	
+			      |<-  ,   <-|
+
+修改的代码：	add: 	statement.write	interpret.opr_wtl	interpret.opr_prt
+		modify:	interpret.opr_sto(把赋值输出删除了)
+
+
+
+读入：
+read(a)
+read(a,b)
+
+
+OPR_RED: 从标准输入设备输入一个整数，存放在栈顶
+
+增加的：
+	word[],wsym[]   "read"    ~NRW++
+	SYM_READ
+流程图示意：
+	语句：	-> write -> ( -> ident		--> )
+			      |		 |	
+			      |<-  ,   <-|
+
+
+修改的代码：	add:	statement.read	interpret.opr_red
+
+
+===========================================修改老师所给的程序中的int错误=======================================
+主要错误发生在block_dx的不作为。
+基本思路，定义全局数组变量：dx[MAXLEVEL]
+修改的代码：	modify：	有dx的地方。
+
+
+====================================== repeat-until========================
+在symtype里加SYM_REPEAT,SYM_UNTIL
+ERROR(30)  "missing until",
+word[]加“repeat”,"until",
+wsym[]加SYM_REPEAT,SYM_UNTIL
+增加NRW的值2。
+
+修改的代码:	add:	statement.repeat
+
+
+

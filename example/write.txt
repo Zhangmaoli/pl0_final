@@ -1,0 +1,15 @@
+var i,j;
+procedure p;
+var k;
+begin
+  k:=6;
+  j:=2;
+  write(i,j,k);
+end;
+begin
+  i := -1;
+  j:=5;
+  write(i,j);
+  call p;
+  write(i,j);
+end.

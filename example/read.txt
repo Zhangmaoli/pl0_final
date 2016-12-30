@@ -1,0 +1,6 @@
+var i,j;
+begin
+  j := 5;
+  read(i);
+  write(i,j);
+end.

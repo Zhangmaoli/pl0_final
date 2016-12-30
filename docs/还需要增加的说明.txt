@@ -1,0 +1,17 @@
+continue
+switch
+function
+数组传参
+const定义const
+
+
+
+==============可以返回结果的procedure
+	因为调用call前，会先计算numOfPar个要压入的值并入栈。
+	将结果记录在procedure 的第一个参数的位置
+	退出后将top减去numOfPar即可以。	（call调用）
+							numOfPar-1 			（factor调用）
+	修改的地方：
+		EXIT部分加入括号（可选）
+		call procedure部分加入gen(int...)
+		factor procedure 部分加入call procedure的一部分，并gen（）。。

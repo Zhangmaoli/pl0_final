@@ -1,0 +1,12 @@
+var i,j;
+begin
+  i := 2;
+  j := 2;
+  if i > 3 then
+    j := 2
+  else
+  begin
+   if i < 3 then
+    j := 1;
+  end;
+end.

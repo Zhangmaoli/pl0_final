@@ -1,0 +1,10 @@
+var i,j;
+begin
+  i := 1;
+  if i = not 0 then
+    j := 1;
+  else
+  begin
+    j := 0;
+  end
+end.

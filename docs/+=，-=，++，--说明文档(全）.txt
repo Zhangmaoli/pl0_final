@@ -1,0 +1,168 @@
++=,-=,++,--,:
+systype: SYM_ADDEQU,SYM_SUBEQU,SYM_ADDADD,SYM_SUBSUB
+error 13:"':=','+=','-=' expected."
+getsym()里修改如下：最后在NSYM数组里查找的时候，把加减号拿出来直接查找判断是赋值，自增自减还是单独的数组里的加减号。
+（只有后置）
+else
+	{ // other tokens
+		i = NSYM;
+		csym[0] = ch;
+		while (csym[i--] != ch);
+		if (++i)
+		{
+			if(ch=='+')
+			{
+				getch();
+				if(ch=='=')
+				{
+					sym=SYM_ADDEQU;
+					getch();
+				}
+				else  if(ch=='+')
+				{
+					sym=SYM_ADDADD;
+					getch();
+				}
+				else 
+				{
+					sym=SYM_PLUS;
+				}
+			}
+			else if(ch=='-')
+			{
+				getch();
+				if(ch=='=')
+				{
+					sym=SYM_SUBEQU;
+					getch();
+				}
+				else if(ch=='-')
+				{
+					sym=SYM_SUBSUB;
+					getch();
+				}
+				else sym=SYM_MINUS;
+			}
+			else 
+			{
+				sym = ssym[i];
+			    getch();
+			}
+		}
+
+(+前置)
+
+statement里修改如下：
+
+
+if (sym == SYM_IDENTIFIER)
+	{ // variable assignment
+		mask* mk;
+		if (! (i = position(id)))
+		{
+			error(11); // Undeclared identifier.
+		}
+		else if (table[i].kind != ID_VARIABLE)
+		{
+			error(12); // Illegal assignment.
+			i = 0;
+		}
+		getsym();
+		if (sym == SYM_BECOMES||sym==SYM_ADDEQU||sym==SYM_SUBEQU)
+		{
+			int saveSym=sym;//用saveSym保存之前的sym,因为后面分析完表达式后会多读出一//个符号
+			getsym();
+			expression(uniteset(fsys,createset(SYM_SEMICOLON,SYM_NULL)));
+		    mk = (mask*) &table[i];
+		    if(i&&saveSym==SYM_BECOMES)
+		    {
+			    gen(STO,level-mk->level,mk->address);
+		    }
+		    else if(i&&saveSym==SYM_ADDEQU)
+		   {
+			   gen(LOD,level-mk->level,mk->address);
+			   gen(OPR,0,OPR_ADD);
+			   gen(STO,level-mk->level,mk->address);
+		   }
+		    else if(i&&saveSym==SYM_SUBEQU)
+		   {
+			  gen(LOD,level-mk->level,mk->address);
+			  gen(OPR,0,OPR_MIN);
+			  gen(OPR,0,OPR_NEG);
+			  gen(STO,level-mk->level,mk->address);
+		   }
+	 
+		}
+else if(sym==SYM_ADDADD)
+	{
+		mask* mk;
+		getsym();
+	    if (sym != SYM_IDENTIFIER)
+		{
+			error(14); // There must be an identifier to follow the 'call'.
+		}
+		else 
+		{
+			i=position(id);
+			if(!i)error(11);
+			else
+			{    
+			    mk = (mask*) &table[i];
+				if(table[i].kind != ID_VARIABLE)
+				{
+					error(12);
+					i=0;
+				}
+				else
+				{
+					getsym();
+					gen(LOD,level-mk->level,mk->address);
+					gen(LIT,0,1);
+					if(i!=0)
+					{
+						gen(OPR,0,OPR_ADD);
+						gen(STO,level-mk->level,mk->address);
+					}
+				}
+			}
+		}
+	}
+	else if(sym==SYM_SUBSUB)
+	{
+		mask* mk;
+		getsym();
+	    if (sym != SYM_IDENTIFIER)
+		{
+			error(14); // There must be an identifier to follow the 'call'.
+		}
+		else
+		{
+			i=position(id);
+			if(!i)error(11);
+			else
+			{
+				mk = (mask*) &table[i];
+				if(table[i].kind != ID_VARIABLE)
+				{
+					error(12);
+					i=0;
+				}
+				else
+				{
+					getsym();
+					gen(LOD,level-mk->level,mk->address);
+					gen(LIT,0,1);
+					gen(OPR,0,OPR_MIN);
+					gen(STO,level-mk->level,mk->address);
+				}
+			}
+		}
+	}
+		else
+		{
+			error(13); // ':=','+=','-=' expected.
+		}
+	
+	}// if sym==SYM_IDENTIFIER
+          
+

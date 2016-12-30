@@ -1,0 +1,81 @@
+const n=1+2*4-2/(2),f=0;//8
+var k[6],a[n][n],i,b,c,d,j,cnt,e;//some variables that never use can be optimized.
+//some procedures that never use can be optimized.
+procedure p;
+  var i;
+procedure p2;
+  var i;
+  begin
+  i:=0;
+  end;
+  begin
+  i:=0;
+  end;
+procedure p1;
+  var i;
+  begin
+  i:=0;
+  end;
+procedure printarr;
+var i,j;
+begin
+ cnt:=cnt+1;
+ writeln(cnt);
+ for i:=0 to n-1 do
+  begin
+   for j:=0 to n-2 do
+    write(a[i][j]);
+   writeln(a[i][n-1]);
+  end;
+end;
+procedure search(i);
+var j,flag,k,d;
+begin
+ if i=n then
+  begin
+   call printarr;
+   exit;
+  end;
+ for j:=0 to n-1 do
+  begin
+   a[i][j]:=1; 
+   flag:=1;
+   for k:=0 to i-1 do
+    if a[k][j]=1 then
+     begin
+      flag:=0;
+      break;
+     end;
+   
+   for k:=i-1 downto 0 do
+    begin
+     d:=i-k;
+     if j-d>=0 then
+      if a[i-d][j-d]=1 then
+       begin
+        flag:=0;
+        break;
+       end;
+     if j+d<n then
+      if a[i-d][j+d]=1 then
+       begin
+       flag:=0; 
+       break;
+       end;
+    end;
+   
+   if flag then
+    begin
+     call search(i+1);
+    end;
+   a[i][j]:=0;
+  end;
+end;
+begin
+ for i:=0 to n-1 do
+  for j:=0 to n-1 do
+   a[i][j]:=0; 
+ cnt:=0;
+ call search(0);
+end. 
+

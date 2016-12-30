@@ -1,0 +1,25 @@
+var i,j;
+procedure print(i);
+var j;
+begin
+ for j:=1 to i-1 do
+  write(8);
+ writeln(8);
+end;
+begin
+  i:=1;
+  if i>2 then
+   write(0);
+  else
+   write(-1);
+  //if i>2 then
+   writeln(1);
+  for i:=1 to 5 do
+   call print(i);
+  repeat
+   begin
+    call print(i);
+    i:=i-1;
+   end;
+  until i=0;
+end.

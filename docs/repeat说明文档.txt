@@ -1,0 +1,5 @@
+在symtype里加SYM_REPEAT,SYM_UNTIL
+ERROR(30)  "missing until",
+word[]加“repeat”,"until",
+wsym[]加SYM_REPEAT,SYM_UNTIL
+增加NRW的值。

@@ -1,0 +1,3 @@
+cmd /k compilePL0.lnk "$(FULL_CURRENT_PATH)" & PAUSE & EXIT
+cmd /k runPL0.lnk & PAUSE & EXIT
+cmd /k compilePL0.lnk "$(FULL_CURRENT_PATH)" & runPL0.lnk & PAUSE & EXIT

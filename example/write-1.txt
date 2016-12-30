@@ -1,0 +1,12 @@
+var i,j;
+procedure p;
+begin
+j := 1;
+write(i,j);
+end;
+begin
+i := 0;
+write(i,j);
+call p;
+write(i,j);
+end.
